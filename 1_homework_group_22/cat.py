@@ -18,4 +18,7 @@ class Cat:
         self.name = name
         
     def greet(self, other):
+        """
+        class method for greeting
+        """
         print("Hello I am {} ! I see you are also a cool fluffy kitty {}, let's together purr at the human, so that they shall give us food!".format(self.name, other.name))
