@@ -27,7 +27,10 @@ filter_sizes = [(12,"Filter=12"),(24,"Filter=24"),(48,"Filter=48")]
 
 
 # %tensorboard --logdir logs/
-for optimizer,name1 in optimizers:
-  for depth,name2 in depths:
-    for filter_size ,name3 in filter_sizes:
-      training_loop(optimizer,depth,filter_size,train_ds,val_ds, 15, name1+name2+name3)
+for depth,name1 in depths:
+  for filter_size ,name2 in filter_sizes:
+    training_loop(tf.keras.optimizers.Adam(),depth,filter_size,train_ds,val_ds, 15,"Adam-"+name1+name2)
+    training_loop(tf.keras.optimizers.SGD(),depth,filter_size,train_ds,val_ds, 15,"SGD-"+name1+name2)
+    training_loop(tf.keras.optimizers.experimental.SGD(momentum = 0.5),depth,filter_size,train_ds,val_ds, 15,"SGD+Mom-"+name1+name2)
+    training_loop(tf.keras.optimizers.experimental.Adagrad(),depth,filter_size,train_ds,val_ds, 15,"Adagard-"+name1+name2)
+    training_loop(tf.keras.optimizers.experimental.RMSprop(),depth,filter_size,train_ds,val_ds, 15,"RMSprop-"+name1+name2)
