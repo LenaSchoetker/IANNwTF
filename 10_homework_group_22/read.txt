@@ -1,0 +1,7 @@
+Dear Tutors,
+although all our efforts and invested time we were not able to successfully complete the assignment when executing our code we received 
+a ValueError in line
+     78   f"No gradients provided for any variable: {variable}. "
+and  79   f"Provided `grads_and_vars` is {grads_and_vars}. 
+Even after intensive investigating we could not resolve this error and get the code running correctly, however we have the complete model, so we hope that is in order.
+Group 22
